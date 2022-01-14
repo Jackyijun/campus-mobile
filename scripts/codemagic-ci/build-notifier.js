@@ -143,7 +143,7 @@ const saveArtifact = async (artifactFilename) => {
 
 		// Save build artifacts to SP
 		if (ENV_VARS.buildPlatform === 'ANDROID') {
-			buildArtifacts.buildAabFilepath = '../../build/app/outputs/aab/release/app-release.aab'
+			buildArtifacts.buildAabFilepath = '../../build/app/outputs/bundle/release/app-release.aab'
 			buildArtifacts.buildAabFinalFilename = ENV_VARS.appVersion + '-' + finalBuildNumber + buildFilenamePrEnvStr + '.aab'
 			buildArtifacts.buildAabFinalUrl = (SP_CONFIG.spSiteUrl + buildFolder + buildArtifacts.buildAabFinalFilename).replace(/ /g, '%20')
 			fs.copyFileSync(buildArtifacts.buildAabFilepath, './' + buildArtifacts.buildAabFinalFilename)
