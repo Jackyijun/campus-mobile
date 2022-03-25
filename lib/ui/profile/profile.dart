@@ -73,16 +73,16 @@ class Profile extends StatelessWidget {
               onTap: handlePrivacyTap,
             ),
           ),
-          Card(
-            child: ListTile(
-              leading: Icon(Icons.wifi_tethering),
-              title: Text('Advanced Wayfinding'),
-              onTap: () {
-                Navigator.pushNamed(
-                    context, RoutePaths.BluetoothPermissionsView);
-              },
-            ),
-          ),
+          // Card(
+          //   child: ListTile(
+          //     leading: Icon(Icons.wifi_tethering),
+          //     title: Text('Advanced Wayfinding'),
+          //     onTap: () {
+          //       Navigator.pushNamed(
+          //           context, RoutePaths.BluetoothPermissionsView);
+          //     },
+          //   ),
+          // ),
           //TODO: Reinstate to view AW developer view in debug mode
           // if(!kReleaseMode) Card(
           //   child: ListTile(

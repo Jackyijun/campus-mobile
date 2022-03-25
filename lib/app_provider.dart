@@ -21,7 +21,6 @@ import 'package:campus_mobile_experimental/core/providers/student_id.dart';
 import 'package:campus_mobile_experimental/core/providers/survey.dart';
 import 'package:campus_mobile_experimental/core/providers/user.dart';
 import 'package:campus_mobile_experimental/core/providers/ventilation.dart';
-import 'package:campus_mobile_experimental/core/providers/wayfinding.dart';
 import 'package:campus_mobile_experimental/core/providers/weather.dart';
 import 'package:campus_mobile_experimental/ui/navigator/top.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
@@ -193,18 +192,18 @@ List<SingleChildWidget> dependentServices = [
     }
     return classScheduleDataProvider;
   }),
-  ChangeNotifierProxyProvider2<Coordinates, UserDataProvider,
-      WayfindingProvider>(create: (_) {
-    print("CreateProvider: AdvancedWayfindingSingleton");
-    var proximityAwarenessSingleton = WayfindingProvider();
-    return proximityAwarenessSingleton;
-  }, update: (_, coordinates, userDataProvider, proximityAwarenessSingleton) {
-    print("UpdateProvider: AdvancedWayfindingSingleton");
-    proximityAwarenessSingleton!
-        .coordinateAndLocation(coordinates, locationProvider!);
-    proximityAwarenessSingleton.userProvider = userDataProvider;
-    return proximityAwarenessSingleton;
-  }),
+  // ChangeNotifierProxyProvider2<Coordinates, UserDataProvider,
+  //     WayfindingProvider>(create: (_) {
+  //   print("CreateProvider: AdvancedWayfindingSingleton");
+  //   var proximityAwarenessSingleton = WayfindingProvider();
+  //   return proximityAwarenessSingleton;
+  // }, update: (_, coordinates, userDataProvider, proximityAwarenessSingleton) {
+  //   print("UpdateProvider: AdvancedWayfindingSingleton");
+  //   proximityAwarenessSingleton!
+  //       .coordinateAndLocation(coordinates, locationProvider!);
+  //   proximityAwarenessSingleton.userProvider = userDataProvider;
+  //   return proximityAwarenessSingleton;
+  // }),
   ChangeNotifierProxyProvider<UserDataProvider, StudentIdDataProvider>(
       create: (_) {
     print("CreateProvider: StudentIdDataProvider");
