@@ -140,6 +140,7 @@ class NavigatorConstants {
   static const MapTab = 1;
   static const NotificationsTab = 2;
   static const ProfileTab = 3;
+  static const EsriMapTab = 4;
 }
 
 class NotificationsConstants {

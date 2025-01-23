@@ -6,6 +6,7 @@ import 'package:campus_mobile_experimental/ui/map/map.dart' as prefix0;
 import 'package:campus_mobile_experimental/ui/navigator/top.dart';
 import 'package:campus_mobile_experimental/ui/notifications/notifications_list_view.dart';
 import 'package:campus_mobile_experimental/ui/profile/profile.dart';
+import 'package:campus_mobile_experimental/ui/esrimap/esrimap.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -52,6 +53,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
     prefix0.Maps(),
     NotificationsListView(),
     Profile(),
+    EsriMaps(),
   ];
 
   @override
@@ -92,6 +94,11 @@ class _BottomTabBarState extends State<BottomTabBar> {
               Provider.of<CustomAppBar>(context, listen: false)
                   .changeTitle("Profile");
               break;
+            case NavigatorConstants.EsriMapTab:
+              resetAllCardLoadedStates();
+              Provider.of<CustomAppBar>(context, listen: false)
+                  .changeTitle("Esri Maps");
+              break;
           }
         },
         items: [
@@ -110,6 +117,10 @@ class _BottomTabBarState extends State<BottomTabBar> {
           BottomNavigationBarItem(
             icon: new Icon(Icons.person),
             label: 'User Profile',
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.map_outlined),
+            label: 'Esri Map',
           ),
         ],
         showSelectedLabels: false,
