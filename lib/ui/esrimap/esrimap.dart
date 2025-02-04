@@ -28,6 +28,10 @@ class _EsriMapsState extends State<EsriMaps> {
       'url':
       'https://services1.arcgis.com/eGSDp8lpKe5izqVc/arcgis/rest/services/UCSD_Regions_2014/FeatureServer/0',
     },
+    {
+      'name':'Anna',
+      'url':'https://admin-enterprise-gis.ucsd.edu/server/rest/services/AdministrationServices/Points_Of_Interest/FeatureServer/0',
+    },
   ];
 
   late ServiceFeatureTable _featureTable;
